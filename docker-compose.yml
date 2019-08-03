@@ -1,0 +1,55 @@
+version: '3.4'
+
+services:
+  learningsirilog:
+    image: ${DOCKER_REGISTRY-}learningsirilog
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - elasticsearch
+      - kibana
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.3.0
+    ports:
+      - "9200:9200"
+    volumes:
+      - elasticsearch-data:/usr/share/elasticsearch/data
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+      - xpack.monitoring.enabled=true
+      - xpack.watcher.enabled=false
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    networks:
+      - docker-network
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:7.3.0
+    ports:
+      - "5601:5601"
+    depends_on:
+      - elasticsearch
+    environment:
+      - ELASTICSEARCH_HOSTS=http://localhost:9200
+      - XPACK_MONITORING_ENABLED=true
+    networks:
+      - docker-network
+
+  logstash:
+    image: docker.elastic.co/logstash/logstash:7.3.0
+    environment:
+      XPACK_MONITORING_ELASTICSEARCH_URL: http://localhost:9200
+    depends_on:
+      - elasticsearch
+    networks:
+      - docker-network
+
+  
+networks:
+  docker-network:
+    driver: bridge
+
+volumes:
+  elasticsearch-data:

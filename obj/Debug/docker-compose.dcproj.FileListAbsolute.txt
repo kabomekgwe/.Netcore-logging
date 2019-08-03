@@ -1,0 +1,5 @@
+C:\Users\KMekgwe\source\repos\LearningSiriLog\bin\Debug\LearningSiriLog.dll
+C:\Users\KMekgwe\source\repos\LearningSiriLog\bin\Debug\LearningSiriLog.pdb
+C:\Users\KMekgwe\source\repos\LearningSiriLog\obj\Debug\docker-compose.dcprojAssemblyReference.cache
+C:\Users\KMekgwe\source\repos\LearningSiriLog\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache
+C:\Users\KMekgwe\source\repos\LearningSiriLog\obj\Debug\docker-compose.dcproj.CopyComplete

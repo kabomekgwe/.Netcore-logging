@@ -1,0 +1,62 @@
+networks:
+  docker-network:
+    driver: bridge
+services:
+  elasticsearch:
+    environment:
+      ES_JAVA_OPTS: -Xms512m -Xmx512m
+      discovery.type: single-node
+      xpack.monitoring.enabled: "true"
+      xpack.security.enabled: "false"
+      xpack.watcher.enabled: "false"
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.3.0
+    networks:
+      docker-network: {}
+    ports:
+    - published: 9200
+      target: 9200
+    volumes:
+    - elasticsearch-data:/usr/share/elasticsearch/data:rw
+  kibana:
+    depends_on:
+    - elasticsearch
+    environment:
+      ELASTICSEARCH_HOSTS: http://localhost:9200
+      XPACK_MONITORING_ENABLED: "true"
+    image: docker.elastic.co/kibana/kibana:7.3.0
+    networks:
+      docker-network: {}
+    ports:
+    - published: 5601
+      target: 5601
+  learningsirilog:
+    build:
+      context: C:\Users\KMekgwe\source\repos\LearningSiriLog
+      dockerfile: Dockerfile
+    depends_on:
+    - elasticsearch
+    - kibana
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_HTTPS_PORT: '44357'
+      ASPNETCORE_URLS: https://+:443;http://+:80
+    image: learningsirilog
+    ports:
+    - published: 62853
+      target: 80
+    - published: 44357
+      target: 443
+    volumes:
+    - C:\Users\KMekgwe\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+    - C:\Users\KMekgwe\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+  logstash:
+    depends_on:
+    - elasticsearch
+    environment:
+      XPACK_MONITORING_ELASTICSEARCH_URL: http://localhost:9200
+    image: docker.elastic.co/logstash/logstash:7.3.0
+    networks:
+      docker-network: {}
+version: '3.4'
+volumes:
+  elasticsearch-data: {}

@@ -1,0 +1,14 @@
+C:\Users\KMekgwe\source\repos\LearningSiriLog\bin\Debug\netcoreapp2.2\LearningSiriLog.deps.json
+C:\Users\KMekgwe\source\repos\LearningSiriLog\bin\Debug\netcoreapp2.2\LearningSiriLog.runtimeconfig.json
+C:\Users\KMekgwe\source\repos\LearningSiriLog\bin\Debug\netcoreapp2.2\LearningSiriLog.runtimeconfig.dev.json
+C:\Users\KMekgwe\source\repos\LearningSiriLog\bin\Debug\netcoreapp2.2\LearningSiriLog.dll
+C:\Users\KMekgwe\source\repos\LearningSiriLog\bin\Debug\netcoreapp2.2\LearningSiriLog.pdb
+C:\Users\KMekgwe\source\repos\LearningSiriLog\obj\Debug\netcoreapp2.2\LearningSiriLog.csproj.CoreCompileInputs.cache
+C:\Users\KMekgwe\source\repos\LearningSiriLog\obj\Debug\netcoreapp2.2\LearningSiriLog.RazorAssemblyInfo.cache
+C:\Users\KMekgwe\source\repos\LearningSiriLog\obj\Debug\netcoreapp2.2\LearningSiriLog.RazorAssemblyInfo.cs
+C:\Users\KMekgwe\source\repos\LearningSiriLog\obj\Debug\netcoreapp2.2\LearningSiriLog.AssemblyInfoInputs.cache
+C:\Users\KMekgwe\source\repos\LearningSiriLog\obj\Debug\netcoreapp2.2\LearningSiriLog.AssemblyInfo.cs
+C:\Users\KMekgwe\source\repos\LearningSiriLog\obj\Debug\netcoreapp2.2\LearningSiriLog.RazorTargetAssemblyInfo.cache
+C:\Users\KMekgwe\source\repos\LearningSiriLog\obj\Debug\netcoreapp2.2\LearningSiriLog.dll
+C:\Users\KMekgwe\source\repos\LearningSiriLog\obj\Debug\netcoreapp2.2\LearningSiriLog.pdb
+C:\Users\KMekgwe\source\repos\LearningSiriLog\obj\Debug\netcoreapp2.2\LearningSiriLog.csprojAssemblyReference.cache
